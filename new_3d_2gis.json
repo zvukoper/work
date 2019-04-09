@@ -3237,6 +3237,8 @@
       "metadata": {},
       "source": "openmaptiles",
       "source-layer": "boundary",
+      "minzoom": 3,
+      "maxzoom": 24,
       "filter": [
         "all",
         [
@@ -3708,7 +3710,6 @@
     {
       "id": "place_village",
       "type": "symbol",
-      "metadata": {},
       "source": "openmaptiles",
       "source-layer": "place",
       "filter": [
@@ -3720,7 +3721,7 @@
         ]
       ],
       "layout": {
-        "text-field": "{name_en}",
+        "text-field": "{name}",
         "text-font": [
           "Roboto Regular"
         ],
@@ -3806,10 +3807,10 @@
     {
       "id": "place_city",
       "type": "symbol",
-      "metadata": {},
       "source": "openmaptiles",
       "source-layer": "place",
-      "minzoom": 5,
+      "minzoom": 3,
+      "maxzoom": 11,
       "filter": [
         "all",
         [
