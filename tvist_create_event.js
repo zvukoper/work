@@ -44,7 +44,32 @@ function addEvent2(person1, person2, name, comment, sday, eday, start, end, mont
 		i++;
 	}
 };
+function addEvent1(person1, name, comment, sday, eday, start, end, month, year)
+{
 
+	var i = sday;
+	while (i <= eday) {
+		/// LOOP HERE
+		var day = i;
+		Ext.Ajax.request({
+			url: 'coord/event',
+			params: {
+				xaction: 'create',
+				data: '{"event":{"type_id":4,"dragResize":true,"stopdate":"'+year+'-'+month+'-'+day+'T'+end+':00","startdate":"'+year+'-'+month+'-'+day+'T'+start+':00","name":"'+name+'","comment":'+comment+',"creator":872,"type_id":3, "staff":[{"staff_id":57,"user_id":'+person1+',"tabel_apparature":true}]}}'
+			},
+			callback: function(opt, suc, resp){
+				if (suc){
+					console.log(resp);
+				}
+			}
+		});
+		/// LOOP HERE END
+		i++;
+	}
+};
+// чтобы найти номера новых людей, нужно в консоли ввести CALENDAR_EVENT.events
+// потом откроется массив всех событий, нужно его развернуть, найти по имени событие с теми, кто тебе нужен и развернуть
+// там будет eventStaff - развернуть и там будут имена и номер который перед именем и есть айди для скрипта
 //ДИЗАЙНЕРЫ
 var Mamaev = 960;
 var Nikitin = 239;
@@ -71,11 +96,18 @@ var Yakimov = 394;
 // +
 var Belonogova = 1169;
 var Porotnikov = 866;
-var Saulyak = 675;
 var Ushkov = 708;
 var Malyshkin = 926;
 var Boroday = 242;
 
+//++
+var Duvanova = 186;
+var Saulyak = 675;
+var Rozhnova = 137;
+var Grishakov = 755;
+var Scherbakova = 379;
+var Ganieva = 91;
 
+addEvent1(Mamaev, "НАЗВАНИЕ", "ОПИСАНИЕ (пробел если не нужно)", "30", "30", "10:00", "11:00", "05", "2019"); //два участника
 addEvent2(Nikitin, Mamaev, "НАЗВАНИЕ", "ОПИСАНИЕ (пробел если не нужно)", "30", "30", "10:00", "11:00", "05", "2019"); //два участника
 addEvent3(Nikitin, Mamaev, Boroday, "НАЗВАНИЕ", "ОПИСАНИЕ (пробел если не нужно)", "30", "30", "10:00", "11:00", "05", "2019"); // три участника
