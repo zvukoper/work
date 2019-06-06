@@ -55,7 +55,7 @@ function addEvent1(person1, name, comment, sday, eday, start, end, month, year)
 			url: 'coord/event',
 			params: {
 				xaction: 'create',
-				data: '{"event":{"type_id":4,"dragResize":true,"stopdate":"'+year+'-'+month+'-'+day+'T'+end+':00","startdate":"'+year+'-'+month+'-'+day+'T'+start+':00","name":"'+name+'","comment":'+comment+',"creator":872,"type_id":3, "staff":[{"staff_id":57,"user_id":'+person1+',"tabel_apparature":true}]}}'
+				data: '{"event":{"type_id":4,"dragResize":true,"stopdate":"'+year+'-'+month+'-'+day+'T'+end+':00","startdate":"'+year+'-'+month+'-'+day+'T'+start+':00","name":"'+name+'","comment":'+comment+',"creator":872, "staff":[{"staff_id":57,"user_id":'+person1+',"tabel_apparature":true}]}}'
 			},
 			callback: function(opt, suc, resp){
 				if (suc){
