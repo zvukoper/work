@@ -55,7 +55,7 @@ function addEvent1(person1, name, comment, sday, eday, start, end, month, year)
 			url: 'coord/event',
 			params: {
 				xaction: 'create',
-				data: '{"event":{"type_id":4,"dragResize":true,"stopdate":"'+year+'-'+month+'-'+day+'T'+end+':00","startdate":"'+year+'-'+month+'-'+day+'T'+start+':00","name":"'+name+'","comment":'+comment+',"creator":872, "staff":[{"staff_id":57,"user_id":'+person1+',"tabel_apparature":true}]}}'
+				data: '{"event":{"type_id":3, "dragResize":true,"stopdate":"'+year+'-'+month+'-'+day+'T'+end+':00","startdate":"'+year+'-'+month+'-'+day+'T'+start+':00","name":"'+name+'","comment":'+comment+',"creator":872, "staff":[{"staff_id":57,"user_id":'+person1+',"tabel_apparature":true}]}}'
 			},
 			callback: function(opt, suc, resp){
 				if (suc){
@@ -108,6 +108,7 @@ var Grishakov = 755;
 var Scherbakova = 379;
 var Ganieva = 91;
 
-addEvent1(Mamaev, "НАЗВАНИЕ", "ОПИСАНИЕ (пробел если не нужно)", "06", "06", "10:00", "11:00", "06", "2019"); //один участник
+// одного человека сделать трудно, потом буду рабираться. Твист дебильный. Он обязательно создает событие на двоих. Потом у события появляется номер и наряд, потом надо выгрузить этот номер. Потом отредактировать список людей и сохранить. Это 4 функции еще. Их так просто не раскурить пока.
+// addEvent1(Mamaev, "НАЗВАНИЕ", "ОПИСАНИЕ (пробел если не нужно)", "06", "06", "10:00", "11:00", "06", "2019"); //один участник
 addEvent2(Nikitin, Mamaev, "НАЗВАНИЕ", "ОПИСАНИЕ (пробел если не нужно)", "30", "30", "10:00", "11:00", "05", "2019"); //два участника
 addEvent3(Nikitin, Mamaev, Boroday, "НАЗВАНИЕ", "ОПИСАНИЕ (пробел если не нужно)", "30", "30", "10:00", "11:00", "05", "2019"); // три участника
